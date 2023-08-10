@@ -30,6 +30,7 @@ function EditCard() {
 
     return (
         <div>
+          {/* Breadcrumb nav bar with link to home and deck */}
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                 <li className="breadcrumb-item active" aria-current="page">

@@ -54,6 +54,7 @@ function CardForm() {
                 type="text"
                 id="front"
                 name="front"
+                placeholder="Front side of card"
                 value={card.front}
                 onChange={changeHandler}
               />
@@ -70,6 +71,7 @@ function CardForm() {
                 type="text"
                 id="back"
                 name="back"
+                placeholder="Back side of card"
                 value={card.back}
                 onChange={changeHandler}
               />

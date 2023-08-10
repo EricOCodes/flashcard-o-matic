@@ -21,6 +21,7 @@ function AddCard() {
 
     return (
         <div>
+            {/* Breadcrumb nav bar with link to home and deck */}
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                 <li className="breadcrumb-item active" aria-current="page">
@@ -36,8 +37,9 @@ function AddCard() {
                 </li>
                 </ol>
             </nav>
+            {/* Displays Title and CardForm component */}
             <h2>Add Card</h2>
-            <CardForm />
+            <CardForm /> 
         </div>
     );
 }
