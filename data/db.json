@@ -44,10 +44,16 @@
     },
     {
       "cards": [],
-      "front": "b",
-      "back": "b",
+      "front": "base",
+      "back": "basic",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "Test Add Card - Edit",
+      "back": "Test Add Card Back - Edit",
+      "deckId": 1,
+      "id": 8
     }
   ]
 }

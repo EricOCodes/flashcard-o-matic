@@ -1,34 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
-import { readDeck, readCard, updateCard, createCard } from "../../utils/api";
+import { readCard, updateCard, createCard } from "../../utils/api";
+
 
 function CardForm() {
-  const [deck, setDeck] = useState({
-    name: "",
-    description: "",
-  });
   const [card, setCard] = useState({
     front: "",
     back: "",
   });
   const params = useParams();
   const history = useHistory();
-  let title = "";
-  let breadcrumbEnd = ""
-
-  if (params.cardId) {
-    title = "Edit Card";
-    breadcrumbEnd = `Edit Card ${params.cardId}`;
-  } else {
-    title = "Add Card";
-    breadcrumbEnd = "Add Card";
-  }
 
   useEffect(() => {
     async function loadElements() {
-      const deckResponse = await readDeck(params.deckId);
-      const deckFromAPI = await deckResponse;
-      setDeck(deckFromAPI);
       if (params.cardId) {
         const cardResponse = await readCard(params.cardId);
         const cardFromAPI = await cardResponse;
@@ -57,23 +41,7 @@ function CardForm() {
   };
   return (
     <div>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item active" aria-current="page">
-            <Link to="/">
-              <span className="bi bi-house-door-fill"></span>Home
-            </Link>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            <Link to={`/decks/${params.deckId}`}>{deck.name}</Link>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            {breadcrumbEnd}
-          </li>
-        </ol>
-      </nav>
       <div>
-        <h2>{title}</h2>
         <form onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="front">
